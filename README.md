@@ -70,9 +70,9 @@ Below is the verified breakdown of leading SaaS digital accessibility and automa
 
 ## 💻 Open-Source Frameworks & Developer Testing Tools
 
-The following table lists top open-source accessibility engines, AST linters, testing harnesses, and CI/CD CLI tools, **sorted descending by GitHub star count**. Each repository name links to the project and is accompanied by a social star count badge directly linked to that repo's stargazers page:
+The following table lists top open-source accessibility engines, AST linters, testing harnesses, and CI/CD CLI tools, **sorted descending by GitHub Stars_Count**. Each repository name links to the project and is accompanied by a social Stars_Count badge directly linked to that repo's stargazers page:
 
-| 📦 Open-Source Repository | 🌟 Stars Badge | 🛠️ Ecosystem / Scope | 📖 Description & Capabilities |
+| 📦 Open-Source Repository | 🌟 Stars_Badge | 🛠️ Ecosystem / Scope | 📖 Description & Capabilities |
 |---|---|---|---|
 | **[GoogleChrome / lighthouse](https://github.com/GoogleChrome/lighthouse)** | [![Stars](https://img.shields.io/github/stars/GoogleChrome/lighthouse?style=social&color=white)](https://github.com/GoogleChrome/lighthouse/stargazers) | Chrome / Node.js / CLI | Automated auditing tool for web performance, SEO, progressive web apps, and automated WCAG accessibility verification. |
 | **[dequelabs / axe-core](https://github.com/dequelabs/axe-core)** | [![Stars](https://img.shields.io/github/stars/dequelabs/axe-core?style=social&color=white)](https://github.com/dequelabs/axe-core/stargazers) | JavaScript / Zero-Dependency | The defacto open-source accessibility rules engine; powers Chrome DevTools, Lighthouse, and major end-to-end test runners. |

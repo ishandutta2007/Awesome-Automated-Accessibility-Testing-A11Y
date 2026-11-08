@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%" style="background:#090d16; border-radius:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; overflow:hidden;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.5" />
+    </pattern>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .orb-pulse {
+      animation: pulseAnim 8s ease-in-out infinite alternate;
+    }
+    .orb-float {
+      animation: floatAnim 10s ease-in-out infinite alternate;
+    }
+    .wave-line {
+      stroke-dasharray: 8 6;
+      animation: dashMove 25s linear infinite;
+    }
+    .sonar {
+      animation: sonarPulse 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      transform-origin: 1040px 140px;
+    }
+    .sonar-2 {
+      animation: sonarPulse 4s cubic-bezier(0, 0.2, 0.8, 1) infinite 2s;
+      transform-origin: 1040px 140px;
+    }
+    @keyframes pulseAnim {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+      100% { transform: scale(1.15) translate(-30px, 20px); opacity: 0.6; }
+    }
+    @keyframes floatAnim {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.25; }
+      100% { transform: scale(1.2) translate(40px, -20px); opacity: 0.55; }
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -300; }
+    }
+    @keyframes sonarPulse {
+      0% { r: 20px; opacity: 0.8; stroke-width: 2px; }
+      100% { r: 90px; opacity: 0; stroke-width: 0.5px; }
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g>
+    <circle cx="150" cy="80" r="180" fill="url(#glowGrad1)" class="orb-pulse" />
+    <circle cx="1050" cy="320" r="220" fill="url(#glowGrad2)" class="orb-float" />
+    <circle cx="950" cy="90" r="130" fill="url(#glowGrad1)" class="orb-pulse" />
+  </g>
+
+  <!-- Dynamic Animated Tech Waves / Connectors in Background -->
+  <g opacity="0.35">
+    <path class="wave-line" d="M -50 340 C 250 260, 450 400, 750 310 C 950 250, 1100 360, 1250 290" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="wave-line" d="M -50 370 C 200 300, 500 420, 800 340 C 1000 280, 1150 390, 1250 320" fill="none" stroke="#818cf8" stroke-width="1.5" />
+  </g>
+
+  <!-- Dynamic Radar / Accessibility Sonar Graphic (Right Side) -->
+  <g transform="translate(10, 0)">
+    <circle cx="1040" cy="140" r="45" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.8" />
+    <circle cx="1040" cy="140" r="20" class="sonar" fill="none" stroke="#38bdf8" />
+    <circle cx="1040" cy="140" r="20" class="sonar-2" fill="none" stroke="#818cf8" />
+    <!-- Accessibility Symbol Representation -->
+    <circle cx="1040" cy="122" r="5" fill="#38bdf8" />
+    <path d="M 1026 135 L 1054 135 M 1040 135 L 1040 152 M 1032 165 L 1040 152 L 1048 165" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Foreground Content: Header, Badges & Title -->
+  <g transform="translate(80, 85)">
+    <!-- Category Pill -->
+    <g>
+      <rect x="0" y="0" width="280" height="32" rx="16" fill="url(#tagGrad)" stroke="#475569" stroke-width="1" />
+      <circle cx="16" cy="16" r="5" fill="#10b981" />
+      <text x="30" y="21" fill="#94a3b8" font-size="13" font-weight="600" letter-spacing="0.5">AWESOME A11Y TESTING SUITE</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="80" fill="#ffffff" font-size="44" font-weight="800" letter-spacing="-1">
+      Automated Accessibility Testing
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="118" fill="url(#accentGrad)" font-size="22" font-weight="700" letter-spacing="0.2">
+      Curated Open-Source Tools, Enterprise SaaS &amp; Compliance Engines
+    </text>
+
+    <!-- Feature Description -->
+    <text x="0" y="152" fill="#94a3b8" font-size="15" font-weight="400">
+      Master WCAG 2.1/2.2, Section 508 &amp; ADA automated verification across web, mobile, and CI/CD pipelines.
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(0, 182)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="110" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="14" y="18" fill="#38bdf8" font-size="12" font-weight="600">⚡ WCAG 2.2</text>
+
+      <!-- Tag 2 -->
+      <rect x="120" y="0" width="105" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="134" y="18" fill="#a855f7" font-size="12" font-weight="600">🛡️ ADA / 508</text>
+
+      <!-- Tag 3 -->
+      <rect x="235" y="0" width="135" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="248" y="18" fill="#34d399" font-size="12" font-weight="600">🚀 CI/CD Ready</text>
+
+      <!-- Tag 4 -->
+      <rect x="380" y="0" width="125" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="393" y="18" fill="#f59e0b" font-size="12" font-weight="600">📊 SaaS Pricing</text>
+    </g>
+  </g>
+</svg>
